@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "action-a-project.slnx",
+    "dotnet.defaultSolution": "Action-A-project-2026.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
