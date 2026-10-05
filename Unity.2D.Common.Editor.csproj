@@ -43,25 +43,25 @@
     <UnityVersion>6000.4.3f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\allri\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\intit\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.3.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\TextureGenerator\TextureGeneratorHelper.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\ImagePacker\ImagePackNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\VisualElementExtensions.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\ImagePacker\ImagePacker.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\DebugTools\PlayerLoopInspector.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\InspectorUtils.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\ImagePacker\Jobs\FindTightRectJob.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\ImagePacker\ImagePackerDebugEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\SettingsWindowUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\TextureGenerator\TextureGeneratorHelper.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\ImagePacker\ImagePackNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\VisualElementExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\ImagePacker\ImagePacker.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\DebugTools\PlayerLoopInspector.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\InspectorUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\ImagePacker\Jobs\FindTightRectJob.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\ImagePacker\ImagePackerDebugEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\SettingsWindowUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.2d.common@49d8bea2bff3\Editor\Unity.2D.Common.Editor.asmdef" />
+    <None Include="Library\PackageCache\com.unity.2d.common@edfe77495b67\Editor\Unity.2D.Common.Editor.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -622,10 +622,6 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">

@@ -43,47 +43,47 @@
     <UnityVersion>6000.4.3f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\allri\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\intit\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.3.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteLibraryAsset.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\BaseDeformationSystem.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteLibrarySourceAsset.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SkeletonAsset.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\NativeCustomSlice.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\CpuDeformationSystem.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\UpdateOrder.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\GpuDeformationSystem.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteLibrary.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\Bone.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\DeformationManagerUpdater.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteSkinHelpers.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\UpdateBoundsJob.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\TransformAccessJob.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\DeformationJobs.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteLibraryData.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteResolverEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\DeformationManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteLibraryUtility.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BufferManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\ISpriteLibraryLabel.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\BatchedDeformation\BoneTransformsChangeDetectionJob.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\IconUtility.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\SpriteResolver.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\NativeArrayHelper.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteSkinUtility.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteLib\ISpriteLibraryCategory.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteSkin.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteSkinBoneBoundsUtility.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\SpriteSkinContainer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\MeshUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteLibraryAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\BaseDeformationSystem.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteLibrarySourceAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SkeletonAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\NativeCustomSlice.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\CpuDeformationSystem.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\UpdateOrder.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\GpuDeformationSystem.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteLibrary.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\Bone.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\DeformationManagerUpdater.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteSkinHelpers.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\UpdateBoundsJob.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\TransformAccessJob.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\DeformationJobs.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteLibraryData.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteResolverEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\DeformationManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteLibraryUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BufferManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\ISpriteLibraryLabel.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\BatchedDeformation\BoneTransformsChangeDetectionJob.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\IconUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\SpriteResolver.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\NativeArrayHelper.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteSkinUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteLib\ISpriteLibraryCategory.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteSkin.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteSkinBoneBoundsUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\SpriteSkinContainer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\MeshUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5\Runtime\Unity.2D.Animation.Runtime.asmdef" />
+    <None Include="Library\PackageCache\com.unity.2d.animation@011d329ac58b\Runtime\Unity.2D.Animation.Runtime.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -632,10 +632,6 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.4.3f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
