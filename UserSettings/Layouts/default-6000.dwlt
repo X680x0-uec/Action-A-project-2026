@@ -604,9 +604,9 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -30190
-      - m_Data: -29990
-      - m_Data: -27754
+      - m_Data: -6330
+      - m_Data: -6136
+      - m_Data: -5340
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -756,8 +756,8 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 62224
-    - m_Data: 62226
+    - m_Data: 61566
+    - m_Data: 61568
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -787,13 +787,13 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 66580
+    - m_Data: 62794
     m_LastClickedID:
-      m_Data: 66580
+      m_Data: 62794
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 62224
-    - m_Data: 62226
+    - m_Data: 61566
+    - m_Data: 61568
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -822,9 +822,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 66580
+    - m_Data: 62794
     m_LastClickedEntityId:
-      m_Data: 66580
+      m_Data: 62794
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
