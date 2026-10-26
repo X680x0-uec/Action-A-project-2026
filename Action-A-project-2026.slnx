@@ -7,6 +7,7 @@
   <Project Path="Unity.2D.Aseprite.Editor.csproj" />
   <Project Path="Unity.Services.Core.Internal.csproj" />
   <Project Path="Unity.Purchasing.csproj" />
+  <Project Path="Unity.Microsoft.GDK.csproj" />
   <Project Path="Unity.Purchasing.PaymentProviderService.csproj" />
   <Project Path="UnityEditor.Purchasing.Authoring.csproj" />
   <Project Path="Unity.Mathematics.csproj" />
@@ -22,6 +23,7 @@
   <Project Path="Unity.Services.Analytics.csproj" />
   <Project Path="Unity.2D.SpriteShape.Editor.csproj" />
   <Project Path="Unity.VisualStudio.Editor.csproj" />
+  <Project Path="Unity.Microsoft.GDK.Editor.csproj" />
   <Project Path="Unity.2D.Animation.Editor.csproj" />
   <Project Path="Unity.Purchasing.Stores.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
@@ -80,6 +82,7 @@
   <Project Path="Unity.Purchasing.Stores.XboxCloudServices.csproj" />
   <Project Path="Unity.Services.Core.Threading.csproj" />
   <Project Path="Unity.Purchasing.Utilities.csproj" />
+  <Project Path="Unity.Microsoft.GDK.Discovery.csproj" />
   <Project Path="Unity.InputSystem.TestFramework.csproj" />
   <Project Path="UnityEditor.XR.LegacyInputHelpers.csproj" />
   <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
