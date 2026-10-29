@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveWASD : MonoBehaviour
 {
@@ -7,26 +8,32 @@ public class MoveWASD : MonoBehaviour
 
     void Update()
     {
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            return;
+        }
+
         // 入力を取得
         float x = 0f;
         float y = 0f;
 
-        if (Input.GetKey(KeyCode.W))
+        if (keyboard.wKey.isPressed)
         {
             y += 1f;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (keyboard.sKey.isPressed)
         {
             y -= 1f;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (keyboard.aKey.isPressed)
         {
             x -= 1f;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (keyboard.dKey.isPressed)
         {
             x += 1f;
         }

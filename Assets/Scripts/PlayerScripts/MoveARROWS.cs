@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveARROWS : MonoBehaviour
 {
@@ -7,29 +8,35 @@ public class MoveARROWS : MonoBehaviour
 
     void Update()
     {
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            return;
+        }
+
         float x = 0f;
         float y = 0f;
 
         // 上矢印
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (keyboard.upArrowKey.isPressed)
         {
             y += 1f;
         }
 
         // 下矢印
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (keyboard.downArrowKey.isPressed)
         {
             y -= 1f;
         }
 
         // 左矢印
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (keyboard.leftArrowKey.isPressed)
         {
             x -= 1f;
         }
 
         // 右矢印
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (keyboard.rightArrowKey.isPressed)
         {
             x += 1f;
         }
