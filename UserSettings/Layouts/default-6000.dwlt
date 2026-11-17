@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 757.3334
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 498}
   m_MaxSize: {x: 10000, y: 10000}
@@ -601,11 +601,11 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 62214
+      - m_Data: 61268
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1662
+      - m_Data: -1426
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -732,8 +732,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Scripts
+    m_Folders: []
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -744,7 +743,7 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: "C:\\Users\\allri\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\Action-A-project-2026"
+  m_LastProjectPath: C:\UnityProjects\Action-A-project-2026
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
@@ -755,12 +754,13 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 62208
-    - m_Data: 62210
-    - m_Data: 62212
-    - m_Data: 62214
-    - m_Data: 62216
-    - m_Data: 62218
+    - m_Data: 61794
+    - m_Data: 61846
+    - m_Data: 61848
+    - m_Data: 61850
+    - m_Data: 61852
+    - m_Data: 61854
+    - m_Data: 61856
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -790,17 +790,18 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 62214
+    - m_Data: 61268
     m_LastClickedID:
-      m_Data: 62214
+      m_Data: 61268
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 62208
-    - m_Data: 62210
-    - m_Data: 62212
-    - m_Data: 62214
-    - m_Data: 62216
-    - m_Data: 62218
+    - m_Data: 61794
+    - m_Data: 61846
+    - m_Data: 61848
+    - m_Data: 61850
+    - m_Data: 61852
+    - m_Data: 61854
+    - m_Data: 61856
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -829,9 +830,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 62214
+    - m_Data: 61268
     m_LastClickedEntityId:
-      m_Data: 62214
+      m_Data: 61268
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -1562,7 +1563,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 86.3, y: 63.5, z: 0}
+    m_Target: {x: 46.657166, y: 7.2490935, z: 0}
     speed: 2
     m_Value: {x: 86.3, y: 63.5, z: 0}
   m_RenderMode: 0
@@ -1615,7 +1616,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 80.61094
     speed: 2
     m_Value: 10
   m_Ortho:
