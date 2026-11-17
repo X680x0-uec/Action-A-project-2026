@@ -206,8 +206,8 @@ MonoBehaviour:
   enemyParent: {fileID: 2025814723}
   enemyPoolSize: 50
   maxAliveEnemies: 100
-  spawnInterval: 0.5
-  spawnDistance: 25
+  spawnInterval: 0.2
+  spawnDistance: 30
 --- !u!4 &6594348
 Transform:
   m_ObjectHideFlags: 0
@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDirection
   direction: {x: 0, y: -1}
+  flipSpriteWithDirection: 1
 --- !u!50 &342137785
 Rigidbody2D:
   serializedVersion: 5
@@ -753,7 +754,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

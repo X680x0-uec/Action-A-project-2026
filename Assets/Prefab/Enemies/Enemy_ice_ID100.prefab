@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   isAlive: 0
   moveSpeed: 5
-  contactDamage: 1
+  contactDamage: 2
 --- !u!114 &-4077453301206385050
 MonoBehaviour:
   m_ObjectHideFlags: 0
