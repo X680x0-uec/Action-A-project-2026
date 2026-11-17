@@ -204,7 +204,7 @@ MonoBehaviour:
     enemyPrefabs:
     - {fileID: 7837934853952432481, guid: b5435b59a32ec404b8b0df913ecc4c0e, type: 3}
   enemyParent: {fileID: 2025814723}
-  enemyPoolSize: 10
+  enemyPoolSize: 50
   maxAliveEnemies: 100
   spawnInterval: 0.5
   spawnDistance: 25
