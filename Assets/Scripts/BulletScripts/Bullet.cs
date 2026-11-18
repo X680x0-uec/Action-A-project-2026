@@ -1,6 +1,7 @@
 using UnityEngine;
 
 // 弾1個を管理するためのスクリプト
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class Bullet : MonoBehaviour
 {
     // ==============================
@@ -34,11 +35,22 @@ public class Bullet : MonoBehaviour
     // 発射時に指定された方向があるかどうか
     private bool hasLaunchDirection = false;
 
+    private Rigidbody2D body;
+    private Collider2D bulletCollider;
+
+
+    void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+        bulletCollider = GetComponent<Collider2D>();
+        UpdateAliveState();
+    }
+
 
     // ==============================
     // 指定した方向へ弾を発射する処理
     // ==============================
-    public void Launch(Vector2 launchDirection)
+    public void Launch(Vector2 launchDirection, Vector2 launchPosition)
     {
         if (launchDirection != Vector2.zero)
         {
@@ -46,7 +58,19 @@ public class Bullet : MonoBehaviour
             hasLaunchDirection = true;
         }
 
-        isAlive = true;
+        body.position = launchPosition;
+        SetAlive(true);
+    }
+
+
+    public void SetAlive(bool alive)
+    {
+        isAlive = alive;
+        UpdateAliveState();
+        if (!alive)
+        {
+            body.linearVelocity = Vector2.zero;
+        }
     }
 
 
@@ -74,9 +98,6 @@ public class Bullet : MonoBehaviour
         // 現在の生存状態に応じて処理を分ける
         if (isAlive)
         {
-            // 弾が生きている場合は表示する
-            UpdateAliveState();
-
             // 死んでいる状態から生きている状態になった瞬間か確認する
             if (!previousIsAlive)
             {
@@ -89,20 +110,19 @@ public class Bullet : MonoBehaviour
                 hasLaunchDirection = false;
             }
 
-            // 弾を移動させる
-            MoveBullet();
-
             // Playerから30以上離れたか確認する
             CheckDistanceFromPlayer();
-        }
-        else
-        {
-            // 弾が死んでいる場合は非表示にする
-            UpdateAliveState();
         }
 
         // 今回の生存状態を次のフレームのために記録する
         previousIsAlive = isAlive;
+    }
+
+    void FixedUpdate()
+    {
+        body.linearVelocity = isAlive
+            ? direction * moveSpeed
+            : Vector2.zero;
     }
 
 
@@ -135,18 +155,6 @@ public class Bullet : MonoBehaviour
 
 
     // ==============================
-    // 弾を一定方向へ移動させる処理
-    // ==============================
-    void MoveBullet()
-    {
-        // 保存しておいた方向へ弾を移動させる
-        // Time.deltaTimeを掛けることで、
-        // 「1秒あたりmoveSpeedだけ進む」動きになる
-        transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
-    }
-
-
-    // ==============================
     // Playerから離れすぎていないか確認する処理
     // ==============================
     void CheckDistanceFromPlayer()
@@ -169,11 +177,7 @@ public class Bullet : MonoBehaviour
         // Playerから30以上離れているか確認する
         if (distance >= maxDistanceFromPlayer)
         {
-            // Bulletを死んでいる状態にする
-            isAlive = false;
-
-            // Bulletを非表示にする
-            UpdateAliveState();
+            SetAlive(false);
         }
     }
 
@@ -183,15 +187,15 @@ public class Bullet : MonoBehaviour
     // ==============================
     void UpdateAliveState()
     {
-        // SpriteRendererがまだ取得できていない場合は何もしない
-        if (spriteRenderer == null)
+        if (spriteRenderer != null)
         {
-            return;
+            spriteRenderer.enabled = isAlive;
         }
 
-        // 生きているなら表示し、
-        // 死んでいるなら非表示にする
-        spriteRenderer.enabled = isAlive;
+        if (bulletCollider != null)
+        {
+            bulletCollider.enabled = isAlive;
+        }
     }
 
    

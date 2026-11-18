@@ -416,8 +416,7 @@ public class BulletManager : MonoBehaviour
             Vector2 direction = Quaternion.Euler(0f, 0f, angle) * baseDirection;
 
             Bullet bullet = availableBullets[i];
-            bullet.transform.position = player.transform.position;
-            bullet.Launch(direction);
+            bullet.Launch(direction, player.transform.position);
         }
     }
 
@@ -433,7 +432,7 @@ public class BulletManager : MonoBehaviour
             return null;
         }
 
-        bullet.isAlive = false;
+        bullet.SetAlive(false);
         return bullet;
     }
 }

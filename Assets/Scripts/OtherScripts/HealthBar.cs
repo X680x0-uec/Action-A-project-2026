@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private bool followTarget;
     [SerializeField] private Vector3 worldOffset = new Vector3(0f, 1f, 0f);
 
+    private RectTransform fillRect;
+
     void Start()
     {
         if (slider == null)
@@ -18,16 +20,27 @@ public class HealthBar : MonoBehaviour
             slider = GetComponent<Slider>();
         }
 
-        if (slider == null)
-        {
-            Debug.LogError("HealthBar requires a Slider component.", this);
-            enabled = false;
-            return;
-        }
-
-        if (fillImage == null && slider.fillRect != null)
+        if (fillImage == null && slider != null && slider.fillRect != null)
         {
             fillImage = slider.fillRect.GetComponent<Image>();
+        }
+
+        if (slider != null)
+        {
+            slider.interactable = false;
+            if (slider.handleRect != null)
+            {
+                slider.handleRect.gameObject.SetActive(false);
+            }
+
+            slider.enabled = false;
+        }
+
+        if (fillImage == null)
+        {
+            Debug.LogError("HealthBar requires a fill Image.", this);
+            enabled = false;
+            return;
         }
 
         if (health == null)
@@ -46,11 +59,11 @@ public class HealthBar : MonoBehaviour
             return;
         }
 
+        fillRect = fillImage.rectTransform;
+        fillImage.sprite = null;
+        fillImage.type = Image.Type.Simple;
         health.HealthChanged += Refresh;
         health.Depleted += OnDepleted;
-        slider.minValue = 0;
-        slider.maxValue = health.MaxHP;
-        slider.wholeNumbers = true;
         Refresh(health);
     }
 
@@ -75,14 +88,13 @@ public class HealthBar : MonoBehaviour
 
     void Refresh(Health target)
     {
-        slider.maxValue = target.MaxHP;
-        slider.value = target.CurrentHP;
+        float ratio = target.MaxHP > 0 ? (float)target.CurrentHP / target.MaxHP : 0f;
+        fillRect.anchorMin = Vector2.zero;
+        fillRect.anchorMax = new Vector2(ratio, 1f);
+        fillRect.offsetMin = Vector2.zero;
+        fillRect.offsetMax = Vector2.zero;
 
-        if (fillImage != null)
-        {
-            float ratio = target.MaxHP > 0 ? (float)target.CurrentHP / target.MaxHP : 0f;
-            fillImage.color = Color.Lerp(emptyHealthColor, fullHealthColor, ratio);
-        }
+        fillImage.color = Color.Lerp(emptyHealthColor, fullHealthColor, ratio);
     }
 
     void OnDepleted(Health target)
