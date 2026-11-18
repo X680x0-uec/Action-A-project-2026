@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2951763791030127699}
   - component: {fileID: 2671145908254639342}
   - component: {fileID: 4975847177959693225}
+  - component: {fileID: -800000000000000001}
   - component: {fileID: -4077453301206385050}
   - component: {fileID: 5096682986365986794}
   - component: {fileID: 7718587107765205300}
@@ -277,3 +278,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDirection
   direction: {x: 0, y: -1}
   flipSpriteWithDirection: 1
+--- !u!114 &-800000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837934853952432481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d639a82533e4129b59c029863ca5310, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHP: 30
+  currentHP: 30

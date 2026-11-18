@@ -266,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 521199777}
   - component: {fileID: 521199776}
+  - component: {fileID: -8123456789012345671}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -273,6 +274,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &-8123456789012345671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521199775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d639a82533e4129b59c029863ca5310, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHP: 100
+  currentHP: 100
 --- !u!212 &521199776
 SpriteRenderer:
   serializedVersion: 2
@@ -938,9 +953,6 @@ SceneRoots:
   - {fileID: 2058416823}
   - {fileID: 521199777}
   - {fileID: 1800186030}
-<<<<<<< HEAD
   - {fileID: 1804811392}
-=======
   - {fileID: 1084429595}
   - {fileID: 621100384}
->>>>>>> 4fd9c180c5fa7de7278287f05d35d3d126fb9a03

@@ -15,6 +15,9 @@ public class Bullet : MonoBehaviour
     // 弾が1秒間に移動する距離
     public float moveSpeed = 5.0f;
 
+    // 命中時に対象へ与えるダメージ
+    public int damage = 10;
+
     // 弾がPlayerから離れてよい最大距離
     public float maxDistanceFromPlayer = 30.0f;
 
