@@ -302,6 +302,14 @@ public class EnemyManager : MonoBehaviour
 
         // プール内の敵を決定済みの位置へ移動し、生存状態にして表示・行動させる。
         enemyToSpawn.transform.position = spawnPosition;
+        Health health = enemyToSpawn.GetComponent<Health>();
+        if (health == null)
+        {
+            Debug.LogError("EnemyManager: spawned enemy has no Health component.", enemyToSpawn);
+            return;
+        }
+
+        health.ResetToInitial();
         enemyToSpawn.isAlive = true;
     }
 

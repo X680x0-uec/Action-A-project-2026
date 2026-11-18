@@ -1,6 +1,7 @@
 using UnityEngine;
 
 // 敵1体を管理するためのスクリプト
+[RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
     // ==============================
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     // 敵の見た目を表示・非表示にするためのSpriteRenderer
     private SpriteRenderer spriteRenderer;
+    private Health health;
 
 
     // ==============================
@@ -32,9 +34,31 @@ public class Enemy : MonoBehaviour
 
         // この敵に付いているSpriteRendererを取得する
         spriteRenderer = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
+        if (health == null)
+        {
+            Debug.LogError("Enemy requires a Health component.", this);
+        }
+        else
+        {
+            health.Depleted += OnHealthDepleted;
+        }
 
         // 現在の生存状態に合わせて表示・非表示を設定する
         UpdateAliveState();
+    }
+
+    void OnDestroy()
+    {
+        if (health != null)
+        {
+            health.Depleted -= OnHealthDepleted;
+        }
+    }
+
+    void OnHealthDepleted(Health depletedHealth)
+    {
+        Die(true);
     }
 
 
@@ -153,14 +177,18 @@ public class Enemy : MonoBehaviour
         // ==============================
         if (other.CompareTag("Player"))
         {
-            // シーン内のHPBarを探す
-            PlayerHPBar playerHPBar = FindAnyObjectByType<PlayerHPBar>();
+            // Player自身のHealthを取得する
+            Health playerHealth = other.GetComponent<Health>();
 
-            // HPBarが見つかった場合だけ処理する
-            if (playerHPBar != null)
+            // Healthが見つかった場合だけHPを減らす
+            if (playerHealth != null)
             {
                 // プレイヤーのHPをcontactDamage分減らす
-                playerHPBar.TakeDamage(contactDamage);
+                playerHealth.TakeDamage(contactDamage);
+            }
+            else
+            {
+                Debug.LogError("Player requires a Health component.", other);
             }
 
             // Playerとの衝突による死亡なので、
@@ -186,9 +214,10 @@ public class Enemy : MonoBehaviour
                 // Bulletが生きている場合だけ命中として扱う
                 if (bullet.isAlive)
                 {
-                    // Bulletとの衝突による死亡なので、
-                    // アイテムをドロップする
-                    Die(true);
+                    if (health != null)
+                    {
+                        health.TakeDamage(bullet.damage);
+                    }
 
                     // Bulletも死亡状態にする
                     bullet.isAlive = false;
