@@ -219,17 +219,7 @@ public class Enemy : MonoBehaviour
                         health.TakeDamage(bullet.damage);
                     }
 
-                    // Bulletも死亡状態にする
-                    bullet.isAlive = false;
-
-                    // Bulletを非表示にする
-                    SpriteRenderer bulletSpriteRenderer =
-                        other.GetComponent<SpriteRenderer>();
-
-                    if (bulletSpriteRenderer != null)
-                    {
-                        bulletSpriteRenderer.enabled = false;
-                    }
+                    bullet.SetAlive(false);
                 }
             }
         }
