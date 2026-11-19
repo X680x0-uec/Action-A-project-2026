@@ -9,33 +9,37 @@ public class MoveWASD : MonoBehaviour
     void Update()
     {
         Keyboard keyboard = Keyboard.current;
-        if (keyboard == null)
-        {
-            return;
-        }
-
-        // 入力を取得
         float x = 0f;
         float y = 0f;
 
-        if (keyboard.wKey.isPressed)
+        if (keyboard != null)
         {
-            y += 1f;
+            if (keyboard.wKey.isPressed)
+            {
+                y += 1f;
+            }
+
+            if (keyboard.sKey.isPressed)
+            {
+                y -= 1f;
+            }
+
+            if (keyboard.aKey.isPressed)
+            {
+                x -= 1f;
+            }
+
+            if (keyboard.dKey.isPressed)
+            {
+                x += 1f;
+            }
         }
 
-        if (keyboard.sKey.isPressed)
+        if (Gamepad.current != null)
         {
-            y -= 1f;
-        }
-
-        if (keyboard.aKey.isPressed)
-        {
-            x -= 1f;
-        }
-
-        if (keyboard.dKey.isPressed)
-        {
-            x += 1f;
+            Vector2 stick = Gamepad.current.leftStick.ReadValue();
+            x += stick.x;
+            y += stick.y;
         }
 
         // 移動

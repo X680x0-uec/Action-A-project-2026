@@ -8,6 +8,10 @@ public class Enemy : MonoBehaviour
     // Inspectorから設定する項目
     // ==============================
 
+    // この敵を倒したときに得られるスコア
+    [Min(0)]
+    public int scoreValue = 100;
+
     // 敵が生きているかどうかを表す変数
     // true  = 生きている
     // false = 死んでいる
@@ -58,6 +62,19 @@ public class Enemy : MonoBehaviour
 
     void OnHealthDepleted(Health depletedHealth)
     {
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.RegisterEnemyKill();
+        }
+        else
+        {
+            Debug.LogError("Enemy requires an EnemyManager to apply kill bonuses.", this);
+        }
+
+        if (GameHud.Instance != null)
+        {
+            GameHud.Instance.AddScore(scoreValue);
+        }
         Die(true);
     }
 
@@ -142,6 +159,11 @@ public class Enemy : MonoBehaviour
         UpdateAliveState();
     }
 
+    public void DespawnWithoutDrop()
+    {
+        Die(false);
+    }
+
 
     // ==============================
     // 敵の表示・非表示を切り替える処理
@@ -216,7 +238,11 @@ public class Enemy : MonoBehaviour
                 {
                     if (health != null)
                     {
-                        health.TakeDamage(bullet.damage);
+                        int damageDealt = health.TakeDamage(bullet.damage);
+                        if (GameHud.Instance != null)
+                        {
+                            GameHud.Instance.AddBulletDamage(damageDealt);
+                        }
                     }
 
                     bullet.SetAlive(false);

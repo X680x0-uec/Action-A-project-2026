@@ -98,4 +98,24 @@ public class BiomeMap : MonoBehaviour
         // 指定仕様に合わせてColor32の赤チャンネルをバイオームIDとして返す。
         return pixels[pixelIndex].r;
     }
+
+    // マップ情報を利用できる場合に、位置がマップ範囲外かを返す。
+    public bool IsPositionOutsideMap(Vector3 worldPosition)
+    {
+        if (!isInitialized || mapSpriteRenderer == null)
+        {
+            return false;
+        }
+
+        Bounds mapBounds = mapSpriteRenderer.bounds;
+        Vector3 min = mapBounds.min;
+        Vector3 size = mapBounds.size;
+        if (size.x <= 0f || size.y <= 0f)
+        {
+            return false;
+        }
+
+        return worldPosition.x < min.x || worldPosition.x > mapBounds.max.x ||
+            worldPosition.y < min.y || worldPosition.y > mapBounds.max.y;
+    }
 }
