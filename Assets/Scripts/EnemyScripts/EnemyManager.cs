@@ -15,6 +15,8 @@ public class BiomeEnemyPrefabs
 // 敵全体を管理するためのスクリプト
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager Instance { get; private set; }
+
     // ========================================
     // Inspectorから設定する項目
     // ========================================
@@ -42,6 +44,12 @@ public class EnemyManager : MonoBehaviour
 
     // Playerから敵を出現させる距離。方向は毎回ランダムに決める。
     public float spawnDistance = 20f;
+
+    [Min(0), InspectorName("Attack Damage Increase Per Enemy Kill")]
+    public int attackDamageIncreasePerKill = 1;
+
+    [Min(0f), InspectorName("Move Speed Increase Per Enemy Kill")]
+    public float moveSpeedIncreasePerKill = 0.1f;
 
 
     // ========================================
@@ -72,11 +80,17 @@ public class EnemyManager : MonoBehaviour
 
     // Time.timeがこの時刻に達したら次のスポーンを行う。
     private float nextSpawnTime = 0.0f;
+    private Health playerHealth;
 
 
     // ========================================
     // ゲーム開始時に1回だけ実行される処理
     // ========================================
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         // 使用するPrefabを集め、Prefabごとの敵をあらかじめ生成する。
@@ -84,6 +98,44 @@ public class EnemyManager : MonoBehaviour
 
         // Inspectorで設定された間隔が経過してから最初の敵を出現させる。
         nextSpawnTime = Time.time + spawnInterval;
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
+
+    public void RegisterEnemyKill()
+    {
+        if (playerHealth == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player == null)
+            {
+                Debug.LogError("EnemyManager: Playerタグのオブジェクトが見つかりません。", this);
+                return;
+            }
+
+            playerHealth = player.GetComponent<Health>();
+            if (playerHealth == null)
+            {
+                Debug.LogError("EnemyManager: PlayerにHealthコンポーネントがありません。", player);
+                return;
+            }
+        }
+
+        playerHealth.AddKillMoveSpeedBonus(moveSpeedIncreasePerKill);
+
+        if (BulletManager.Instance == null)
+        {
+            Debug.LogError("EnemyManager: BulletManagerが見つからないため攻撃力を強化できません。", this);
+            return;
+        }
+
+        BulletManager.Instance.AddKillAttackDamage(attackDamageIncreasePerKill);
     }
 
     // 既定Prefabとバイオーム別Prefabを集め、Prefabごとに再利用用プールを作る。
@@ -233,6 +285,20 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    public void DespawnAllAliveEnemies()
+    {
+        foreach (Enemy enemy in enemyList)
+        {
+            if (enemy != null && enemy.isAlive)
+            {
+                enemy.DespawnWithoutDrop();
+            }
+        }
+
+        aliveEnemyCount = 0;
+        nextSpawnTime = Time.time + spawnInterval;
+    }
+
 
     // ========================================
     // 既存のランダムなスポーン位置を決め、その地点のバイオームに合う敵を出す。
@@ -253,16 +319,23 @@ public class EnemyManager : MonoBehaviour
             return;
         }
 
-        // 0～360度のランダムな方向を決め、PlayerからspawnDistanceだけ離れた位置を計算する。
+        // マップ範囲外なら方向を決め直し、範囲内に入るまでスポーン位置を再抽選する。
         Vector3 playerPosition = player.transform.position;
-        float randomAngle = Random.Range(0f, 360f);
-        float x = Mathf.Cos(randomAngle * Mathf.Deg2Rad);
-        float y = Mathf.Sin(randomAngle * Mathf.Deg2Rad);
-        Vector3 spawnPosition = playerPosition + new Vector3(x, y, 0f) * spawnDistance;
+        Vector3 spawnPosition;
+        int biomeId;
+        do
+        {
+            float randomAngle = Random.Range(0f, 360f);
+            float x = Mathf.Cos(randomAngle * Mathf.Deg2Rad);
+            float y = Mathf.Sin(randomAngle * Mathf.Deg2Rad);
+            spawnPosition = playerPosition + new Vector3(x, y, 0f) * spawnDistance;
 
-        // このスポーン位置に重なるマスクの赤チャンネルからバイオームIDを取得する。
-        // BiomeMap未設定やマップ範囲外の場合、GetBiomeIdは-1を返す。
-        int biomeId = biomeMap != null ? biomeMap.GetBiomeId(spawnPosition) : -1;
+            // この位置に重なるマスクの赤チャンネルからバイオームIDを取得する。
+            // BiomeMap未設定や初期化失敗時は既定Prefabにフォールバックする。
+            biomeId = biomeMap != null ? biomeMap.GetBiomeId(spawnPosition) : -1;
+        }
+        while (biomeMap != null && biomeMap.IsPositionOutsideMap(spawnPosition));
+
         EnemyPool selectedPool = FindPoolForBiome(biomeId);
 
         // 候補Prefab自体は登録済みなのにプールが満員の場合、別バイオームの敵で代用しない。

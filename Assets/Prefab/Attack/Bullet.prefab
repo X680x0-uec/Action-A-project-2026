@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   isAlive: 0
   moveSpeed: 10
-  damage: 10
+  damage: 5
   maxDistanceFromPlayer: 30
 --- !u!114 &5407072417981111371
 MonoBehaviour:

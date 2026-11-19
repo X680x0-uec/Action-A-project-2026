@@ -86,7 +86,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -36041309
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2995f963c9c833f4684212af0fdcf0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  scoreValue: 0
   isAlive: 0
   moveSpeed: 5
   contactDamage: 1
@@ -200,6 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHP: 30
   currentHP: 30
+  maxHPIncreasePercentPerRespawn: 50
+  moveSpeedIncreasePercentPerRespawn: 20
+  respawnNoticeDuration: 2
 --- !u!114 &-4077453301206385050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyItemDrop
   itemPrefab: {fileID: 6433426323604535494, guid: 6151a285e8aeec84ca1de6c6f3d22358, type: 3}
+  upgradeType: 0
   dropChance: 0.3
 --- !u!114 &3278795176494550613
 MonoBehaviour:

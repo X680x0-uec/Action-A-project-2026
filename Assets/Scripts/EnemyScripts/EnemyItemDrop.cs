@@ -6,6 +6,9 @@ public class EnemyItemDrop : MonoBehaviour
     // 生成するアイテムのPrefabをInspectorから設定する
     public GameObject itemPrefab;
 
+    // この敵のドロップで強化する武器
+    public WeaponUpgradeType upgradeType = WeaponUpgradeType.Bullet;
+
     [Range(0f, 1f)]
     public float dropChance = 0.1f;
 
@@ -40,9 +43,12 @@ public class EnemyItemDrop : MonoBehaviour
             parentTransform
         );
 
-        if (droppedItem.GetComponent<ItemPickup>() == null)
+        ItemPickup itemPickup = droppedItem.GetComponent<ItemPickup>();
+        if (itemPickup == null)
         {
-            droppedItem.AddComponent<ItemPickup>();
+            itemPickup = droppedItem.AddComponent<ItemPickup>();
         }
+
+        itemPickup.SetUpgradeType(upgradeType);
     }
 }
